@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #06a563;
+            padding: 1em 0;
+            text-align: center;
+            color: white;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav li {
+            margin: 0 20px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        section {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .About {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        img { border-radius: 50%; 
+            height: 200px;  
+            width: 200px; 
+            object-fit: cover;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        h1 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        h2 {
+            font-size: 20px;
+            margin: 20px 0 10px;
+            border-bottom: 2px solid #ddd;
+        }
+        p {
+            line-height: 1.6;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f0f0f0;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .buttons button {
+            background-color: #10028f;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .buttons button:hover {
+            background-color: #a80a05;
+        }
+        .buttons a {
+            color: white;
+            text-decoration: none;
+        }
+        footer {
+            text-align: center;
+            background-color: #06a563;
+            color: white;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- About section -->
+        <section class="About" id="about">
+            <img src="emma.png" alt="Profile-picture">
+            <div>
+                <h1>EMMANUEL TETTEH</h1>
+                <p>IT Professional</p>
+            </div>
+        </section>
+
+        <!-- Experience section -->
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div class="experience">
+                <h3>Kofi Annan Center for Excellence</h3>
+                <p>Senior Graphics Designer (2021 - 2023)</p>
+                <ul>
+                    <li>Developed scalable software solutions using Java and C++.</li>
+                </ul>
+
+                <h3>Royal Empire Ghana Limited</h3>
+                <p>Network Support Assistant (2020 - Present)</p>
+                <ul>
+                    <li>Assisted in the configuration and maintenance of network infrastructure.</li>
+                    <li>Troubleshooted network-related issues and ensured network security.</li>
+                    <li>Designed and implemented secure cloud infrastructure using AWS and Azure.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Skills section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Programming Languages: Java, C++</li>
+                <li>Networking: Configuration and maintenance of network infrastructure, Troubleshooting network-related issues, Network security</li>
+                <li>Cloud Services: AWS, Azure</li>
+                <li>Graphics Design: [Add specific design tools or software]</li>
+                <li>Problem-Solving: Identifying and resolving complex technical issues</li>
+                <li>Project Management: [Relevant methodologies like Agile, Scrum]</li>
+            </ul>
+        </section>
+
+        <!-- Contact section -->
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:royalpentiumk@gmail.com">royalpentiumk@gmail.com</a></p>
+            <p>Phone: (+233) 594569068</p>
+            <div class="buttons">
+                <button id="hire-me">Hire Me</button>
+                <button id="LinkedIn"><a href="https://www.linkedin.com/in/emmanuel-tetteh-61a6b6329" target="_blank">LinkedIn</a></button>
+            </div>
+        </section>
+
+        <!-- Shopping List Manager Section -->
+        <section id="shopping-list">
+            <h2>Shopping List Manager</h2>
+            <input type="text" id="item-input" placeholder="Add a new item">
+            <button onclick="addItem()">Add Item</button>
+            <button onclick="showModal()">Show List</button>
+        </section>
+
+        <div id="shopping-list-modal">
+            <div id="shopping-list-content">
+                <h3>Your Shopping List</h3>
+                <ul id="list-display"></ul>
+                <button id="list-close" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>@copyright: Emmanuel TETTEH</p>
+    </footer>
+
+    <script>
+        document.getElementById("hire-me").addEventListener("click", function() {
+            alert("Thank you for your interest! Please contact me at royalpentiumk@gmail.com");
+        });
+
+        document.getElementById("LinkedIn").addEventListener("click", function() {
+            alert("This is my LinkedIn Profile Link");
+        });
+
+        // Shopping List Manager JavaScript
+        const shoppingList = [];
+
+        function addItem() {
+            const itemInput = document.getElementById("item-input");
+            const itemName = itemInput.value.trim();
+            if (itemName && !shoppingList.includes(itemName)) {
+                shoppingList.push(itemName);
+                itemInput.value = "";
+                alert(`"${itemName}" has been added to your shopping list.`);
+            } else if (shoppingList.includes(itemName)) {
+                alert(`"${itemName}" is already in the list.`);
+            } else {
+                alert("Please enter
